@@ -1,1 +1,5 @@
-lesson.bh
+#!/bin/bash
+read -p 'Введите своё имя: ' name
+mkdir "$name"
+echo "Привет $name ! Это твоя первая папка" > "$name/welcome.txt"
+echo "Директория $name создана"
