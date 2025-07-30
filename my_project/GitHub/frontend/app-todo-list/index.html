@@ -1,48 +1,100 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Список задач</title>
-    <link rel = "stylesheet" href = "styles.css">
+    <title>To-Do List</title>
     <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class = 'header'> 
+        <span> Название </span>
+        <div class="tasks-status"> 
+            <span> Выполнено: 4</span>
+            <span> Осталось: 3 </span>
+        </div>
+        <ion-icon name="sunny"></ion-icon>
+        <ion-icon name="moon" style="display:none"></ion-icon>
+    </div>
+    <hr />
 
-    <h1> &#9997; Task Mate</h1>
-    <div class = container> 
-        <div class = taskPanel> 
-            <div class = taskAdd> 
-                <input type = text placeholder = 'Новая задача...' id = newTask> 
-                <button id = addTask onclick="addTask()"> Добавить </button>
-                <button class = "deleteTask deactive" onclick="deleteAllChecked()"> Удалить выделенные </button>
+    <div class = 'add-section'> 
+        <input type="text" placeholder="Новая задача"> 
+        <input type = "date">
+        <select> 
+            <option id = "low"> Низкий </option>
+            <option id = "medium"> Средний </option>
+            <option id = "high"> Высокий </option>
+        </select>
+        <button> Добавить </button>
+    </div>
+    <br />
+    <div class = 'task-container'>
+        <div class="task low">
+            <div class="task-head">
+                <span class="priority"><ion-icon name="star-outline"></ion-icon></span>
+                <span class="deadline"> 20.07.2025 </span>
             </div>
-            <div class = taskList> 
-                
+            <hr />
+            <div class="task-body">
+                <span> Первый таск </span>
+                <hr />
+                <div class="buttons">
+                    <button class="delete-task"> Удалить </button>
+                    <button class="edit-task"> Редактировать </button>
+                    <!-- При клике заменить на <button class="reset-task" style="display:none"> Восстановить </button> 
+                     Это кнопка будет использоваться для восстановления таска при удалении-->
+                    <button class="solved-task"> Решено </button>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="task medium">
+            <div class="task-head">
+                <span class="priority"><ion-icon name="star-half"></ion-icon></span>
+                <span class="deadline"> 20.07.2025 </span>
+            </div>
+            <hr />
+            <div class="task-body">
+                <span>Второй таск первый макет </span>
+                <hr />
+                <div class="buttons">
+                    <button class="delete-task"> Удалить </button>
+                    <button class="edit-task"> Редактировать </button>
+                    <!-- При клике заменить на <button class="reset-task" style="display:none"> Восстановить </button> 
+                     Это кнопка будет использоваться для восстановления таска при удалении-->
+                    <button class="solved-task"> Решено </button>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="task high">
+            <div class="task-head">
+                <span class="priority"><ion-icon name="star"></ion-icon></span>
+                <span class="deadline"> 20.07.2025 </span>
+            </div>
+            <hr />
+            <div class="task-body">
+                <span> Третий таск с длинныйм текстом чтобы проверить как поведёт себя элемент </span>
+                <hr />
+                <div class="buttons">
+                    <button class="delete-task"> Удалить </button>
+                    <button class="edit-task"> Редактировать </button>
+                    <!-- При клике заменить на <button class="reset-task" style="display:none"> Восстановить </button> 
+                     Это кнопка будет использоваться для восстановления таска при удалении-->
+                    <button class="solved-task"> Решено </button>
+                    
+                </div>
             </div>
         </div>
     </div>
 
-    <div class = editConteiner style="display:none"> 
-        <h2> Редактор задач </h2>
-        <div class = "editPanel"> 
-            <textarea id="editForm"></textarea>
-            <br />
-            <span style="font-size: 18px;"> Статус задачи после редактирования: </span>
-            <select>
-                <option> <ion-icon name="checkbox-outline" id="editTaskDone" style="color: green"></ion-icon> Решено</option>
-                <option> <ion-icon name="close-circle-outline" id="editTaskNoDone" style="color: red"></ion-icon> Не решено </option>
-            </select>
-            <br />
-            <div class = buttons>
-                <button id="cancellEdit" onclick="closeTaskEdit()">Отмена</button>
-                <button id="saveEdit" onclick="editTask()">Сохранить</button>
-            </div>
+    <div class = 'footer'> 
 
-        </div>
     </div>
 
-    <script src = "scripts.js"></script>
 </body>
 </html>
