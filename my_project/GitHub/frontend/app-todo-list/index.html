@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список задач</title>
+    <link rel = "stylesheet" href = "styles.css">
+    <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
+</head>
+<body>
+
+    <h1> &#9997; Task Mate</h1>
+    <div class = container> 
+        <div class = taskPanel> 
+            <div class = taskAdd> 
+                <input type = text placeholder = 'Новая задача...' id = newTask> 
+                <button id = addTask onclick="addTask()"> Добавить </button>
+                <button class = "deleteTask deactive" onclick="deleteAllChecked()"> Удалить выделенные </button>
+            </div>
+            <div class = taskList> 
+                
+            </div>
+        </div>
+    </div>
+
+    <div class = editConteiner style="display:none"> 
+        <h2> Редактор задач </h2>
+        <div class = "editPanel"> 
+            <textarea id="editForm"></textarea>
+            <br />
+            <span style="font-size: 18px;"> Статус задачи после редактирования: </span>
+            <select>
+                <option> <ion-icon name="checkbox-outline" id="editTaskDone" style="color: green"></ion-icon> Решено</option>
+                <option> <ion-icon name="close-circle-outline" id="editTaskNoDone" style="color: red"></ion-icon> Не решено </option>
+            </select>
+            <br />
+            <div class = buttons>
+                <button id="cancellEdit" onclick="closeTaskEdit()">Отмена</button>
+                <button id="saveEdit" onclick="editTask()">Сохранить</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src = "scripts.js"></script>
+</body>
+</html>
