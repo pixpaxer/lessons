@@ -1,0 +1,213 @@
+
+/* Обшщие стили страницы */
+body{
+    background: linear-gradient(90deg,rgb(69, 226, 200) 0%, rgb(91, 241, 123) 50%, rgb(252, 173, 27) 100%);
+}
+
+h1, h2, h3{
+    color: #fff;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+/* Контейнер для списка (используется для выравнивания и чтобы лист подтсраивался под размер содержимого но не больше 50vw*/
+.container{
+    text-align: center;
+    font-size: 25px; 
+    
+}
+
+/* Сам список */ 
+.taskPanel{
+    display: inline-block;
+    padding: 5px;
+    max-width: 50vw;
+    border-radius: 15px;
+    background-color: #ffffff80;
+    box-shadow: 1px 0px 100px 25px rgba(0, 217, 255, 0.43);
+    
+}
+
+ion-icon{
+    color: #4a4a4ad8
+}
+
+.taskAdd{
+    height: 40px;
+    padding: 5px;
+    display:flex;
+    justify-content:center;
+}
+
+#newTask{
+    border-radius: 5px;
+    border: none;
+    height: 35px;
+	width:60%;
+    box-sizing: border-box;
+    background-color: #ffffffb3;
+    outline: 0;
+}
+
+#addTask{
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    background-image: linear-gradient(144deg,#2f93ba, #7757c7 50%,#ad53ed);
+    cursor: pointer;
+    color: #ffffff;
+    margin: 0 4px 0 4px;
+}
+
+
+#addTask:hover{
+    box-shadow: 1px 0px 10px 5px #2b95d3c2
+    
+}
+
+.deleteTask{
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    cursor: pointer;
+    background-image: linear-gradient(144deg,#e1ff36a9, #8bf039c2 50%,#176d3bd6);
+    color: #000000;
+}
+
+.deleteTask:not(.deactive):hover{
+    box-shadow: 1px 0px 10px 5px #e34444c2
+}
+.deactive{
+    opacity: 0.6;
+    cursor: default;
+}
+
+.task{
+    display: flex; 
+    border-radius: 5px;
+    padding: 10px;
+    margin: 2px;
+    background-color: #f2f2f261;
+    text-align: left;
+    font-size: 20px;
+}
+
+.task .taskButtons{
+    margin-left: auto;
+}
+
+.task:hover{
+    transform: scale(1.03)
+}
+
+.taskButtons .trash:hover{
+    color: rgba(255, 0, 0, 0.572); 
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.taskButtons .edit:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+
+.done{
+    text-decoration: line-through;
+    background-color: rgba(111, 244, 111, 0.397);
+}
+
+.done:hover{
+
+    background-color: rgba(41, 255, 41, 0.507);
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+.editConteiner{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    z-index:10;
+    background-color: #6c6c6cb8;
+    text-align: center;
+}
+
+.editPanel{
+    display: inline-block;
+    border: 1px solid #636262;
+    border-radius: 15px;
+    background-color: #ffffff80;
+    margin-top: 20vh;
+    padding: 10px;
+}
+textarea{
+    max-width: 45vw;
+    outline: none;
+    border-radius: 5px;
+    margin: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    background-color: #ffffffba;
+}
+
+select,
+::picker(select) {
+  appearance: base-select;
+}
+
+select {
+  border: 2px solid #cec6c6;
+  background: #cfcfcf;
+  padding: 5px;
+  transition: 0.4s;
+}
+
+select:hover,
+select:focus {
+  background: #e6e6e6;
+}
+
+::picker(select) {
+  border: none;
+}
+
+option {
+  border: 2px solid #ddd;
+  background: #dfdfdf;
+  padding: 10px;
+  transition: 0.4s;
+}
+
+option:hover,
+option:focus {
+  background: #a0ddbc;
+}
+
+
+.editPanel .buttons button{
+    padding: 5px;
+    margin: 10px; 
+    font-size:18px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+#cancellEdit:hover{background-color: rgba(255, 0, 0, 0.418); transition: 0.7s;}
+
+#saveEdit:hover{background-color: rgba(30, 255, 0, 0.418); transition: 0.7s;}
