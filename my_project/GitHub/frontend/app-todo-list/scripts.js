@@ -45,7 +45,7 @@ function renderTask(){
         })
         
     }else{
-        taskPlace.innerHTML = "<h3> Новых задач пока нет </h3><img src='img/non-task.png' alt='Задачи отсутсвуют' width='300px' height='300px'>"
+        taskPlace.innerHTML = "<h3> Новых задач пока нет </h3>"
     }
     deleteAllButtonStatus()
 }
